@@ -1,10 +1,10 @@
 $header-bg-color: rgba(255, 255, 255, 0.95);
 
 .header {
-  background-color: $header-bg-color;
+  background-color: whitesmoke;
   display: flex;
   justify-content: space-between;
-  margin: 10px 5px 20px 5px;
+  margin: 0 5px 0 5px;
   a {
     text-decoration: none;
     color: black;
@@ -31,6 +31,10 @@ $header-bg-color: rgba(255, 255, 255, 0.95);
       color: black;
       h4 {
         font-size: 20px;
+        &:hover {
+          color: blue;
+          transition: all 0.2s ease-in-out;
+        }
       }
     }
   }

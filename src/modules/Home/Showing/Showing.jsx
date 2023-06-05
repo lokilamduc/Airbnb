@@ -31,47 +31,49 @@ function Showing() {
   if (error) return null;
 
   return (
-    <div className={styles.wrapper} id="phim">
-      <Swiper
-        slidesPerView={4}
-        // spaceBetween={25}
-        grid={{
-          rows: 2,
-          fill: "row",
-        }}
-        pagination={{
-          clickable: true,
-        }}
-        className={styles.mySwiper}
-      >
-        {locations?.map((item, index) => (
-          <SwiperSlide key={index} className={styles.RoomDetails}>
-            <div>
-              <img
-                src={item.hinhAnh}
-                className={styles.bannerImg}
-                width="60%"
-                height="auto"
-              />
-
-              <div className={styles.tenTinh}>
-                {item.tinhThanh.substring(0, 20)}
-              </div>
+    <div className={styles.container}>
+      <div className={styles.wrapper} id="khuVuc">
+        <Swiper
+          slidesPerView={4}
+          // spaceBetween={25}
+          grid={{
+            rows: 2,
+            fill: "row",
+          }}
+          pagination={{
+            clickable: true,
+          }}
+          className={styles.mySwiper}
+        >
+          {locations?.map((item, index) => (
+            <SwiperSlide key={index} className={styles.RoomDetails}>
               <div>
-                <p className={styles.fontSize}>{item.tenViTri}</p>
+                <img
+                  src={item.hinhAnh}
+                  className={styles.bannerImg}
+                  width="60%"
+                  height="auto"
+                />
+
+                <div className={styles.tenTinh}>
+                  {item.tinhThanh.substring(0, 20)}
+                </div>
+                <div>
+                  <p className={styles.fontSize}>{item.tenViTri}</p>
+                </div>
+                <div className={styles.button}>
+                  <button
+                    onClick={() => navigate(`/roomdetails/${item.id}`)}
+                    className={styles.choseRoom}
+                  >
+                    Xem Phòng
+                  </button>
+                </div>
               </div>
-              <div className={styles.button}>
-                <button
-                  onClick={() => navigate(`/roomdetails/${item.id}`)}
-                  className={styles.choseRoom}
-                >
-                  Xem Phòng
-                </button>
-              </div>
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
     </div>
   );
 }

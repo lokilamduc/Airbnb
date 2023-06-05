@@ -27,22 +27,24 @@ function Banner() {
   if (error) return null;
 
   return (
-    <Swiper
-      navigation={true}
-      pagination={{ clickable: true }}
-      modules={[Navigation, Pagination, EffectFade]}
-      className={styles.mySwiper}
-    >
-      {locations.map((item, index) => (
-        <SwiperSlide key={index} className="swiper-slide">
-          <img
-            src={item.hinhAnh}
-            alt={item.tenViTri}
-            className={styles.bannerImg}
-          />
-        </SwiperSlide>
-      ))}
-    </Swiper>
+    <div style={{ marginTop: "20px" }}>
+      <Swiper
+        navigation={true}
+        pagination={{ clickable: true }}
+        modules={[Navigation, Pagination, EffectFade]}
+        className={styles.mySwiper}
+      >
+        {locations.map((item, index) => (
+          <SwiperSlide key={index} className="swiper-slide">
+            <img
+              src={item.hinhAnh}
+              alt={item.tenViTri}
+              className={styles.bannerImg}
+            />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
   );
 }
 

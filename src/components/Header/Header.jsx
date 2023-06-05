@@ -16,7 +16,7 @@ function Header() {
         </Link>
       </div>
       <div className={styles.header__menu}>
-        <a href="#">
+        <a href="#khuVuc">
           <h4>Khu Vực</h4>
         </a>
         <a href="#">
@@ -25,7 +25,7 @@ function Header() {
         <a href="#">
           <h4>Hoạt Động</h4>
         </a>
-        <a href="#">
+        <a href="#uuDai">
           <h4>Ưu Đãi</h4>
         </a>
       </div>

@@ -62,7 +62,7 @@ function Showing() {
               </div>
               <div className={styles.button}>
                 <button
-                  onClick={() => navigate(`/roomdetails/${item.maViTri}`)}
+                  onClick={() => navigate(`/roomdetails/${item.id}`)}
                   className={styles.choseRoom}
                 >
                   Xem Phòng

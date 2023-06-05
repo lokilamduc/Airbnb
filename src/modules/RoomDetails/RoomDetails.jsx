@@ -5,12 +5,13 @@ import { useParams } from "react-router-dom";
 
 function RoomDetails() {
   const { maViTri } = useParams();
+  const { id } = useParams();
 
   console.log(maViTri);
   return (
     <div>
+      <ShowRoom id={id} />
       <RoomInfo maViTri={maViTri} />
-      <ShowRoom maViTri={maViTri} />
     </div>
   );
 }

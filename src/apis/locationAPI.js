@@ -1,7 +1,11 @@
 import axiosClient from "./axiosClient";
 
-export const apiGetLocations = async () => {
-  const { data } = await axiosClient.get("/vi-tri");
+export const apiGetLocations = async (id) => {
+  const { data } = await axiosClient.get("/vi-tri", {
+    params: {
+      id: id,
+    },
+  });
   return data;
 };
 

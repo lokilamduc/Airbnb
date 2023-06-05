@@ -7,8 +7,12 @@ function Header() {
   return (
     <div className={styles.header}>
       <div className={styles.header__logo}>
-        <Link to="/" style={{ fontSize: "x-large" }}>
-          Airbnb
+        <Link to="/">
+          <img
+            style={{ width: "30%" }}
+            src="img/Airbnb_Logo_Bélo.svg.png"
+            alt=""
+          />
         </Link>
       </div>
       <div className={styles.header__menu}>

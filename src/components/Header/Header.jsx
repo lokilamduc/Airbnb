@@ -19,7 +19,7 @@ function Header() {
         <a href="#khuVuc">
           <h4>Khu Vực</h4>
         </a>
-        <a href="#">
+        <a href="#khachSan">
           <h4>Khách Sạn</h4>
         </a>
         <a href="#">

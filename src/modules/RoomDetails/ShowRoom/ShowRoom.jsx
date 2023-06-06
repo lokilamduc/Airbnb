@@ -2,13 +2,13 @@ import React, { useState, useEffect } from "react";
 import { apiGetLocations } from "../../../apis/locationAPI";
 import styles from "./ShowRoom.module.scss";
 
-function ShowRoom(id) {
+function ShowRoom({ id }) {
   const [locations, setLocations] = useState([]);
   const [error, setError] = useState(null);
 
   const getLocations = async () => {
     try {
-      const data = await apiGetLocations(id);
+      const data = await apiGetLocations();
       console.log(data);
       setLocations(data.content);
     } catch (error) {
@@ -16,22 +16,24 @@ function ShowRoom(id) {
     }
   };
   useEffect(() => {
-    getLocations(id);
+    getLocations();
   }, []);
 
   if (error) return null;
   return (
     <div>
-      {/* {locations.map((item, index) => {
-        return (
-          <div key={{ index }}>
-            <img src={item.id} className={styles.bannerImg} />
-          </div>
-        );
-      })} */}
-      {locations?.filter((item) => {
-        if (item.id === id) {
-          return <img src={item.hinhAnh} alt="" />;
+      {locations.map((item) => {
+        if (item.id.toString() === id) {
+          return (
+            <div>
+              <img
+                key={item.id}
+                src={item.hinhAnh}
+                className={styles.bannerImg}
+              />
+              <p className={styles.bannerText}>{item.tinhThanh}</p>
+            </div>
+          );
         }
       })}
     </div>

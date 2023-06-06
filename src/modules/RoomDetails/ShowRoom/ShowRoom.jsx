@@ -22,15 +22,18 @@ function ShowRoom(id) {
   if (error) return null;
   return (
     <div>
-      {locations.map((item, index) => (
-        <div key={index}>
-          <img
-            src={item.hinhAnh}
-            alt={item.tenViTri}
-            className={styles.bannerImg}
-          />
-        </div>
-      ))}
+      {/* {locations.map((item, index) => {
+        return (
+          <div key={{ index }}>
+            <img src={item.id} className={styles.bannerImg} />
+          </div>
+        );
+      })} */}
+      {locations?.filter((item) => {
+        if (item.id === id) {
+          return <img src={item.hinhAnh} alt="" />;
+        }
+      })}
     </div>
   );
 }

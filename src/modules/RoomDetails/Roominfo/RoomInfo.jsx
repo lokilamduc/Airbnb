@@ -20,7 +20,7 @@ function RoomInfo({ maViTri }) {
   }, []);
 
   return (
-    <div>
+    <div style={{ backgroundColor: "white" }}>
       {roomDetails?.map((item, index) => (
         <div key={index} className={styles.OverView}>
           <div className="container">
